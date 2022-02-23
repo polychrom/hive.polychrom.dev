@@ -1,0 +1,13 @@
+version: "3"
+services:
+  alpine:
+    image: alpine:latest
+    container_name: mainframe
+    restart: unless-stopped
+    ports:
+      - "9083:8083"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cal.rule=Host(`mainframe.pizzateig.me`)"
+      - "traefik.http.routers.cal.entrypoints=web"
+      - "traefik.http.services.cal.loadbalancer.server.port=9083"
