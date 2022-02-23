@@ -6,7 +6,7 @@ services:
       - "traefik.enabled=true"
       - "traefik.backend=nginx"
       - "traefik.frontend.rule=Host:mainframe.pizzateig.me"
-      - "traefik.port=80"
+      - "traefik.port=49156"
     restart: always
     networks:
       - web
