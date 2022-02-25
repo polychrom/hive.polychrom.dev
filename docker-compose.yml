@@ -1,16 +1,22 @@
-version: '2'
+version: '3.4'
+
 services:
-  nginx:
-    image: nginx:stable
-    labels:
-      - "traefik.enabled=true"
-      - "traefik.backend=nginx"
-      - "traefik.frontend.rule=Host:mainframe.pizzateig.me"
-      - "traefik.port=49156"
-    restart: always
+  projectx:
+    image: projectx
+    container_name: projectx
+    build: .
+    ports:
+        - 3000
     networks:
-      - web
+        - web
+    labels:
+        - "traefik.enable=true" # <== Enable traefik on itself to view whoami and assign subdomain to view it
+        - "traefik.http.routers.projectx.entrypoints=web"
+        - "traefik.http.routers.projectx.rule=Host(`mainframe.pizzateig.me`)" # <== Setting the domain for the whoami
+        - "traefik.http.routers.projectx-web-secured.entrypoints=web-secured"
+        - "traefik.http.routers.projectx-web-secured.tls.certresolver=mytlschallenge"
+        - "traefik.http.routers.projectx-web-secured.rule=Host(`mainframe.pizzateig.me`)" # <== Setting the domain for the whoami
+
 networks:
   web:
-    external:
-      name: web
+    external: true
