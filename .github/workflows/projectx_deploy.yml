@@ -19,7 +19,7 @@ jobs:
         KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       with:
         source: "."
-        target: "/var/www/${{ github.repository }}"
+        target: "/var/www/${{ github.event.repository.name }}"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
