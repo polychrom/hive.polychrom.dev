@@ -5,11 +5,12 @@ services:
         image: nginx:latest
         container_name: projectx
         ports:
-            - 8001:8001
+          - "9083:8083"
         volumes:
-            - ./src:/usr/share/nginx/html
+          - ./src:/usr/share/nginx/html
         labels:
           - "traefik.enable=true"
-          - "traefik.http.routers.rule=Host(`hive.polychrom.dev`)"
-          - "traefik.http.routers.entrypoints=websecure"
-          - "traefik.http.routers.tls.certresolver=myresolver"
+          - "traefik.http.routers.projectx.rule=Host(`hive.polychrom.dev`)"
+          - "traefik.http.routers.projectx.entrypoints=websecure"
+          - "traefik.http.routers..projectx.tls.certresolver=myresolver"
+          - "traefik.http.services.cal.loadbalancer.server.port=9083"
