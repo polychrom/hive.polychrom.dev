@@ -9,7 +9,7 @@ services:
         volumes:
           - ./src:/usr/share/nginx/html
         networks:
-          - traefik_network # <== Placing traefik on the network named web, to access containers on this network
+          - "traefik_network" # <== Placing traefik on the network named web, to access containers on this network
         labels:
           - "traefik.enable=true"
           - "traefik.http.routers.projectx.rule=Host(`hive.polychrom.dev`)"
