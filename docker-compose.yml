@@ -13,11 +13,10 @@ services:
       - "traefik.http.routers.projectx.entrypoints=websecure"
       - "traefik.http.routers.projectx.rule=Host(`hive.polychrom.dev`)"
       - "traefik.http.routers.projectx.tls.certresolver=myresolver"
-      #- "traefik.http.services.projectx.loadbalancer.server.port=9083"
       - "traefik.port=8005"
 
     networks:
-      - traefik_network # <== Placing traefik on the network named web, to access containers on this network
+      - traefik_network
 networks:
   traefik_network:
     external: true
