@@ -3,7 +3,13 @@ version: "3"
 services:
     client:
         image: nginx:latest
+        container_name: projectx
         ports:
-            - 8001:80
+            - 8001:8001
         volumes:
             - ./src:/usr/share/nginx/html
+        labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.rule=Host(`pizzateig.me`, `www.pizzateig.me`)"
+          - "traefik.http.routers.entrypoints=websecure"
+          - "traefik.http.routers.tls.certresolver=myresolver"
