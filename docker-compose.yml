@@ -10,6 +10,6 @@ services:
             - ./src:/usr/share/nginx/html
         labels:
           - "traefik.enable=true"
-          - "traefik.http.routers.rule=Host(`pizzateig.me`, `www.pizzateig.me`)"
+          - "traefik.http.routers.rule=Host(`hive.polychrom.dev`)"
           - "traefik.http.routers.entrypoints=websecure"
           - "traefik.http.routers.tls.certresolver=myresolver"
