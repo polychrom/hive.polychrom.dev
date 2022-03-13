@@ -5,7 +5,8 @@ services:
     image: nginx:latest
     container_name: projectx
     ports:
-      - "9083:8083"
+      #  - "9083:8083"
+      - "8005"
     volumes:
       - ./src:/usr/share/nginx/html
     labels:
@@ -13,7 +14,8 @@ services:
       - "traefik.http.routers.projectx.entrypoints=websecure"
       - "traefik.http.routers.projectx.rule=Host(`hive.polychrom.dev`)"
       - "traefik.http.routers.projectx.tls.certresolver=myresolver"
-      - "traefik.http.services.cal.loadbalancer.server.port=9083"
+      - "traefik.http.services.projectx.loadbalancer.server.port=9083"
+      - "traefik.port=8005"
 
     networks:
       - traefik_network # <== Placing traefik on the network named web, to access containers on this network
