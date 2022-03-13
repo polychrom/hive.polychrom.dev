@@ -5,8 +5,7 @@ services:
     image: nginx:latest
     container_name: projectx
     ports:
-      #  - "9083:8083"
-      - "8005"
+      - 8005
     volumes:
       - ./src:/usr/share/nginx/html
     labels:
