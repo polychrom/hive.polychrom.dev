@@ -4,70 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PLAY &#128064;</title>
-
-    <link rel="stylesheet" href="css/light.css" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <title>H I V E</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
     <script
-      src="https://kit.fontawesome.com/9be16426d1.js"
+      src="https://kit.fontawesome.com/16f6774484.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <div class="intro">this way <i class="fas fa-arrow-circle-down"></i></div>
+    <div id="cockpit">
+      <div class="logo">HIVE</div>
+      <div id="project_count"></div>
 
-    <div id="chapter-wrapper">
-      <div class="header">
-        <a href="#chapter-wrapper"
-          ><img class="logo" src="assets/logo_sm_blue.png"
-        /></a>
-        <span>visual logbook</span>
-        <div>
-          <span id="info">0%</span>
-          <span>synthetic</span>
-        </div>
-        <span>open 24/7</span>
-        <div>
-          <a id="prev" onclick="scrollPrev()"
-            ><i id="up" class="fas fa-arrow-circle-up"></i
-          ></a>
-          <a id="next" onclick="scrollNext()"
-            ><i id="down" class="fas fa-arrow-circle-down"></i
-          ></a>
-        </div>
+      <div>
+        <button id="grid_2" onclick="setGridItems(2)">
+          <img src="icons/grid.png" width="20" height="20" />
+        </button>
+        <button onclick="setGridItems(3)">
+          <img src="icons/grid.png" width="20" height="20" />
+        </button>
+        <button onclick="setGridItems(4)">
+          <img src="icons/grid.png" width="20" height="20" />
+        </button>
+        <button onclick="setGridItems(5)">
+          <img src="icons/grid.png" width="20" height="20" />
+        </button>
       </div>
-
-      <div id="chapter-head"></div>
     </div>
+    <div id="gallery"></div>
 
-    <div id="root"></div>
-
-    <footer>
-      <div class="gif">
-        <span>
-          You have reached the end &#128557;<br />
-          Send me a message
-          <a href="https://www.polychrom.dev/#anchor-hey" target="_blank"
-            >@polychrom</a
-          >
-          or come back soon. <br />
-          Have a nice day!</span
-        >
+    <div id="modal">
+      <div id="modal_close" onclick="closeModal()">
+        <i class="fa-solid fa-xmark fa-xl"></i>
       </div>
-      <span class="copy">&copy; 2022 PLAY. All images and videos.</span>
-    </footer>
-
-    <script src="js/smoothscrolling.js"></script>
-    <script src="js/layout.js"></script>
+      <div id="modal_id"></div>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>

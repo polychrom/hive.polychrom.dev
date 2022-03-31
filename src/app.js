@@ -34,6 +34,9 @@ function setGridItems(items, save = true) {
 }
 
 function createGalleryItem(id, data) {
+  const project_dir = data.project[id].project_dir;
+  console.log("log", project_dir);
+
   const link = document.createElement("a");
   var linkText = document.createTextNode("" + data.project[id].title + id);
   link.href = "#" + id;
@@ -63,7 +66,7 @@ function createGalleryItem(id, data) {
 
   const currentGalleryItem = document.querySelectorAll(".gallery__item")[id];
   currentGalleryItem.style.backgroundImage = `url( ${
-    root_dir + data.project[id].images[0]
+    root_dir + project_dir + "/" + data.project[id].images[0]
   } )`;
 }
 

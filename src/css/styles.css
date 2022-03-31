@@ -5,6 +5,12 @@ body {
   margin: 12px 6px;
 }
 
+/* ICONS */
+
+.icon-video {
+  background-image: url(./icons/video-solid.svg);
+}
+
 button {
   background-color: #fff;
   border: none;
