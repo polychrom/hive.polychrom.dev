@@ -8,6 +8,12 @@ let listOfViewedProjects = [];
 
 const root_dir = "projects/";
 const homeUrl = window.location.origin + window.location.pathname;
+const logoSubText = [
+  "output x process",
+  "open 24/7",
+  "design + engineering",
+  "100% synthetic",
+];
 
 const items = 20;
 const modal = document.getElementById("modal");
@@ -86,12 +92,15 @@ function createGalleryItem(id, data) {
 }
 
 const viewed = document.getElementById("viewed");
+const logoSub = document.getElementById("logo-sub");
 
 function initModal(data) {
   window.addEventListener("hashchange", function () {
     openModal(data);
     // viewed.innerHTML = getViewedProjects();
     console.log("modal opened", getViewedProjects());
+
+    logoSub.innerHTML = getRandomLogoSub();
   });
 }
 
@@ -208,7 +217,6 @@ function closeModal() {
 function getIdFromHash(data) {
   const allProjects = Object.keys(data.project).length;
   const hash = window.location.href.split("#")[1];
-  console.log("hash", hash);
 
   for (id = 0; id < allProjects; id++) {
     if (data.project[id].project_dir == hash) {
@@ -269,6 +277,11 @@ function windowSize() {
     setGridItems(lastGridItem);
     isMobile = false;
   }
+}
+
+function getRandomLogoSub() {
+  const randomNumber = Math.floor(Math.random() * logoSubText.length);
+  return logoSubText[randomNumber];
 }
 
 function getViewedProjects() {
