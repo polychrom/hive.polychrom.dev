@@ -85,9 +85,12 @@ function createGalleryItem(id, data) {
   } )`;
 }
 
+const viewed = document.getElementById("viewed");
+
 function initModal(data) {
   window.addEventListener("hashchange", function () {
     openModal(data);
+    // viewed.innerHTML = getViewedProjects();
     console.log("modal opened", getViewedProjects());
   });
 }
@@ -153,19 +156,22 @@ function openModal(data) {
   div.setAttribute("class", "modal__wrapper");
   modal_id.appendChild(div);
 
-  const textbox = document.createElement("div");
-  textbox.innerHTML = "fweverververv";
-  textbox.setAttribute("class", "textbox");
-  div.appendChild(textbox);
+  /* MODAL HEAD INFOS */
+  h1_project_name = document.createElement("h1");
+  h1_project_name.setAttribute("class", "modal_project_name");
+  h1_project_name.innerHTML = currentProject.project_dir.toUpperCase();
+  div.appendChild(h1_project_name);
 
-  li_project_name = document.createElement("li");
-  li_project_name.setAttribute("class", "modal_project_name");
-  li_project_name.innerHTML = currentProject.project_dir.toUpperCase();
-  textbox.appendChild(li_project_name);
-
+  /* MODAL YEAR */
   li_year = document.createElement("li");
   li_year.innerHTML = currentProject.year;
-  textbox.appendChild(li_year);
+  div.appendChild(li_year);
+
+  /* MODAL TEXT */
+  const textbox = document.createElement("div");
+  textbox.innerHTML = currentProject.text;
+  textbox.setAttribute("class", "textbox");
+  div.appendChild(textbox);
 
   modal.style.visibility = "visible";
 
