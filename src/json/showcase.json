@@ -72,6 +72,33 @@
       "images": ["gradient1.jpg"],
       "background": "#000000",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+    },
+    {
+      "title": "run",
+      "year": 2005,
+      "project_dir": "run",
+      "tools": ["cinema4d"],
+      "images": ["run.gif"],
+      "background": "#000000",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+    },
+    {
+      "title": "gameboy",
+      "year": 2005,
+      "project_dir": "gameboy",
+      "tools": ["photoshop", "cinema4d"],
+      "images": ["gameboy_gradient.jpg"],
+      "background": "#000000",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+    },
+    {
+      "title": "hype",
+      "year": 2005,
+      "project_dir": "hype",
+      "tools": ["photoshop", "cinema4d"],
+      "images": ["hype.gif"],
+      "background": "#000000",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
     }
   ]
 }

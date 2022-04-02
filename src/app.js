@@ -4,6 +4,7 @@ const viewport = {
 };
 
 let isMobile = false;
+let listOfViewedProjects = [];
 
 const root_dir = "projects/";
 const homeUrl = window.location.origin + window.location.pathname;
@@ -87,6 +88,7 @@ function createGalleryItem(id, data) {
 function initModal(data) {
   window.addEventListener("hashchange", function () {
     openModal(data);
+    console.log("modal opened", getViewedProjects());
   });
 }
 
@@ -157,6 +159,7 @@ function openModal(data) {
   div.appendChild(textbox);
 
   li_project_name = document.createElement("li");
+  li_project_name.setAttribute("class", "modal_project_name");
   li_project_name.innerHTML = currentProject.project_dir.toUpperCase();
   textbox.appendChild(li_project_name);
 
@@ -165,16 +168,6 @@ function openModal(data) {
   textbox.appendChild(li_year);
 
   modal.style.visibility = "visible";
-  /*
-  div.innerHTML =
-    currentId +
-    " / " +
-    currentProject.project_dir +
-    " / " +
-    currentProject.title +
-    " / " +
-    currentProject.year;
-    */
 
   const imageSet = currentProject.images.length;
 
@@ -189,6 +182,7 @@ function openModal(data) {
 
     div.appendChild(img);
   }
+  saveViewedProjects(currentProject.project_dir);
 }
 
 function updateProjectCount(count) {
@@ -269,4 +263,13 @@ function windowSize() {
     setGridItems(lastGridItem);
     isMobile = false;
   }
+}
+
+function getViewedProjects() {
+  return localStorage.getItem("list");
+}
+
+function saveViewedProjects(currentProject) {
+  listOfViewedProjects.push(currentProject);
+  localStorage.setItem("list", listOfViewedProjects.join(","));
 }

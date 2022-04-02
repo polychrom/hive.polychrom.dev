@@ -23,9 +23,8 @@ body {
 }
 
 .btn {
-  /*background-color: #e6e6e6;*/
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 3px;
   cursor: pointer;
   padding: 6px 20px;
@@ -35,13 +34,12 @@ body {
 }
 
 .btn-active, .btn-active-grid {
-  background-color: #999;
+  border: 2px solid #000;
 
 }
 
 .btn:hover {
-  /* background-color: #999;*/
-  border: 1px solid #000;
+  border: 2px solid #000;
 }
 
 
@@ -174,7 +172,6 @@ li {
   border-radius: 4px;
   cursor: pointer;
   padding-bottom: 70%;
-  /*border: 3px solid #fff;*/
 }
 
 .modal__wrapper {
@@ -195,6 +192,11 @@ li {
   z-index: 999;
   visibility: hidden;
 }
+
+.modal_project_name {
+font-weight: 700;
+}
+
 
 #modal_close {
   width: 30px;
@@ -230,7 +232,7 @@ input {
   position: absolute;
   left: 0;
   top: 32px;
-  background-color: #e6e6e6;
+  background-color: #fff;
   width: 100px;
   z-index: 1;
   border-radius: 3px;
@@ -238,4 +240,12 @@ input {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.dropdown-content li {
+  border: none;
+}
+
+.dropdown-content li:hover {
+  border: 2px solid #000;
 }
