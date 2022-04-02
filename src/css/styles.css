@@ -40,7 +40,8 @@ body {
 }
 
 .btn:hover {
-  background-color: #999;
+  /* background-color: #999;*/
+  border: 1px solid #000;
 }
 
 

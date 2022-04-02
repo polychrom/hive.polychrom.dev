@@ -232,7 +232,9 @@ function init() {
 init();
 
 const search = document.getElementById("search");
-search.addEventListener("input", searchFilter);
+if (search) {
+  search.addEventListener("input", searchFilter);
+}
 
 function searchFilter(e) {
   const term = e.target.value;
