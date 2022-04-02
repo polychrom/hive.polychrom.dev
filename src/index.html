@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>H I V E</title>
     <link rel="stylesheet" href="css/styles.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap"
       rel="stylesheet"
     />
     <script
@@ -18,32 +23,51 @@
     ></script>
   </head>
   <body>
+    <div class="icon-video"></div>
     <div id="cockpit">
-      <div class="logo">HIVE</div>
-      <div id="project_count"></div>
+      <div class="logo">hive</div>
 
-      <div>
-        <button id="grid_2" onclick="setGridItems(2)">
-          <img src="icons/grid.png" width="20" height="20" />
-        </button>
-        <button onclick="setGridItems(3)">
-          <img src="icons/grid.png" width="20" height="20" />
-        </button>
-        <button onclick="setGridItems(4)">
-          <img src="icons/grid.png" width="20" height="20" />
-        </button>
-        <button onclick="setGridItems(5)">
-          <img src="icons/grid.png" width="20" height="20" />
-        </button>
+      <!--
+      <div class="flex">
+        <div id="project_count" class="btn"></div>
+        <div class="btn">all</div>
+        <div class="btn" onclick="filter(2021, this)">2021</div>
+        <div class="btn" onclick="filter(2005, this)">2005</div>
+      </div>
+    -->
+
+      <div class="flex">
+        <div class="btn dropdown">
+          <span id="timeline">Timeline</span>
+          <div class="dropdown-content">
+            <li onclick="filter(0, this)">All</li>
+            <li onclick="filter(2005, this)">2005</li>
+            <li onclick="filter(2021, this)">2021</li>
+          </div>
+        </div>
+
+        <button
+          class="btn icon-grid icon-grid-2"
+          onclick="setGridItems(2, this)"
+        ></button>
+        <button
+          class="btn icon-grid icon-grid-3"
+          onclick="setGridItems(3, this)"
+        ></button>
+        <button
+          class="btn icon-grid icon-grid-4"
+          onclick="setGridItems(4, this)"
+        ></button>
+        <button
+          class="btn icon-grid icon-grid-5"
+          onclick="setGridItems(5, this)"
+        ></button>
       </div>
     </div>
     <div id="gallery"></div>
 
     <div id="modal">
-      <div id="modal_close" onclick="closeModal()">
-        <i class="fa-solid fa-xmark fa-xl"></i>
-      </div>
-      <div id="modal_id"></div>
+      <div id="modal_close" onclick="closeModal()"></div>
     </div>
     <script src="app.js"></script>
   </body>

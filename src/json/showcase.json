@@ -5,7 +5,7 @@
       "year": 2021,
       "project_dir": "circles",
       "tools": ["photoshop", "cinema4d"],
-      "images": ["circles0000.png", "2.png", "3.png"],
+      "images": ["circles0000.png", "circles0001.png", "circles0002.png"],
       "background": "#000000",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
     },
@@ -20,7 +20,7 @@
     },
     {
       "title": "strctr",
-      "year": 2021,
+      "year": 2020,
       "project_dir": "strctr",
       "tools": ["photoshop", "cinema4d"],
       "images": ["1.png", "2.png", "3.png"],
@@ -29,7 +29,7 @@
     },
     {
       "title": "simulation",
-      "year": 2021,
+      "year": 2019,
       "project_dir": "simulation",
 
       "tools": ["photoshop", "cinema4d"],
@@ -39,7 +39,7 @@
     },
     {
       "title": "aasfwef wwt",
-      "year": 2021,
+      "year": 2018,
       "project_dir": "glass",
       "tools": ["photoshop", "cinema4d"],
       "images": ["glass1.jpg", "glass5.jpg"],
@@ -61,6 +61,15 @@
       "project_dir": "tetrapods",
       "tools": ["photoshop", "cinema4d"],
       "images": ["1.jpg", "3.png"],
+      "background": "#000000",
+      "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+    },
+    {
+      "title": "tetrapods",
+      "year": 2005,
+      "project_dir": "gradient",
+      "tools": ["photoshop", "cinema4d"],
+      "images": ["gradient1.jpg"],
       "background": "#000000",
       "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
     }
