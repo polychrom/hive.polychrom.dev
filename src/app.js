@@ -43,13 +43,14 @@ function setGridItems(items, elemx, save = true) {
 function createGalleryItem(id, data) {
   const project_dir = data.project[id].project_dir;
   const project_name = project_dir;
-
+  const project_tools = data.project[id].tools;
   const project_year = data.project[id].year;
 
   const link = document.createElement("a");
   link.href = "#" + project_dir;
   link.setAttribute("data-year", project_year);
   link.setAttribute("data-name", project_name);
+  link.setAttribute("data-tools", project_tools);
 
   gallery.appendChild(link);
 
@@ -229,6 +230,28 @@ function init() {
 }
 
 init();
+
+const search = document.getElementById("search");
+search.addEventListener("input", searchFilter);
+
+function searchFilter(e) {
+  const term = e.target.value;
+  const items = document.getElementsByTagName("a");
+
+  for (item of items) {
+    item.classList.remove("gallery__item__hide");
+  }
+
+  for (item of items) {
+    console.log("year", item.dataset.year);
+    console.log("tools", item.dataset.tools);
+
+    if (item.dataset.tools.indexOf(term) == -1) {
+      item.setAttribute("class", "gallery__item__hide");
+    }
+  }
+  console.log("items", items);
+}
 
 window.addEventListener("resize", windowSize);
 
