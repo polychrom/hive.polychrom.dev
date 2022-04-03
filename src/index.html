@@ -51,50 +51,56 @@
     ></script>
   </head>
   <body>
-    <div id="cockpit">
-      <div>
-        <div id="logo">hive</div>
-        <div id="logo-sub">output × process</div>
-      </div>
-      <!--
+    <div id="app__wrapper">
+      <div id="cockpit">
+        <div>
+          <div id="logo">hive</div>
+          <div id="logo-sub">output × process</div>
+        </div>
+        <!--
       <div id="viewed">view</div>
       -->
 
-      <div class="flex">
-        <!--
+        <div class="flex">
+          <!--
         <input id="search" type="search" />
         -->
-        <div class="btn dropdown">
-          <span id="timeline">Timeline</span>
-          <div class="dropdown-content">
-            <li onclick="filter(0, this)">All</li>
-            <li onclick="filter(2005, this)">2005</li>
-            <li onclick="filter(2021, this)">2021</li>
+          <!--
+          <div class="btn dropdown">
+            <span id="timeline">Timeline</span>
+            <div class="dropdown-content">
+              <li onclick="filter(0, this)">All</li>
+              <li onclick="filter(2005, this)">2005</li>
+              <li onclick="filter(2021, this)">2021</li>
+            </div>
           </div>
+        -->
+
+          <button
+            class="btn icon-grid icon-grid-2"
+            onclick="setGridItems(2, this)"
+          ></button>
+          <button
+            class="btn icon-grid icon-grid-3"
+            onclick="setGridItems(3, this)"
+          ></button>
+          <button
+            class="btn icon-grid icon-grid-4"
+            onclick="setGridItems(4, this)"
+          ></button>
+          <button
+            class="btn icon-grid icon-grid-5"
+            onclick="setGridItems(5, this)"
+          ></button>
         </div>
-
-        <button
-          class="btn icon-grid icon-grid-2"
-          onclick="setGridItems(2, this)"
-        ></button>
-        <button
-          class="btn icon-grid icon-grid-3"
-          onclick="setGridItems(3, this)"
-        ></button>
-        <button
-          class="btn icon-grid icon-grid-4"
-          onclick="setGridItems(4, this)"
-        ></button>
-        <button
-          class="btn icon-grid icon-grid-5"
-          onclick="setGridItems(5, this)"
-        ></button>
       </div>
+      <div id="gallery"></div>
     </div>
-    <div id="gallery"></div>
 
-    <div id="modal">
-      <div id="modal_close" onclick="closeModal()"></div>
+    <div id="modal__wrapper" onclick="closeModal()">
+      <div id="modal">
+        <div id="modal_close" onclick="closeModal()"></div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>

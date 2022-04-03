@@ -6,6 +6,8 @@ const viewport = {
 let isMobile = false;
 let listOfViewedProjects = [];
 
+let galleryLastScrollPositionY = 0;
+
 const root_dir = "projects/";
 const homeUrl = window.location.origin + window.location.pathname;
 const logoSubText = [
@@ -16,12 +18,29 @@ const logoSubText = [
 ];
 
 const items = 20;
+const modal_wrapper = document.getElementById("modal__wrapper");
+const app_wrapper = document.getElementById("app__wrapper");
+
 const modal = document.getElementById("modal");
 const project_count = document.getElementById("project_count");
 
 var range = document.getElementById("range");
 
 const gallery = document.getElementById("gallery");
+
+function init() {
+  fetch("json/showcase.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      mountGallery(data);
+      initModal(data);
+      updateProjectCount(Object.keys(data.project).length);
+    });
+}
+
+init();
 
 function setGridItems(items, elemx, save = true) {
   btnActiveGrid = document.querySelectorAll(".btn-active-grid");
@@ -97,7 +116,9 @@ const logoSub = document.getElementById("logo-sub");
 function initModal(data) {
   window.addEventListener("hashchange", function () {
     openModal(data);
-    // viewed.innerHTML = getViewedProjects();
+    galleryLastScrollPositionY = window.scrollY;
+    window.scrollTo(0, 0);
+    app_wrapper.classList.add("app__wrapper__fixed");
     console.log("modal opened", getViewedProjects());
 
     logoSub.innerHTML = getRandomLogoSub();
@@ -161,28 +182,30 @@ function openModal(data) {
 
   modal.appendChild(modal_id);
 
+  /*
   const div = document.createElement("div");
   div.setAttribute("class", "modal__wrapper");
   modal_id.appendChild(div);
+  */
 
   /* MODAL HEAD INFOS */
   h1_project_name = document.createElement("h1");
   h1_project_name.setAttribute("class", "modal_project_name");
   h1_project_name.innerHTML = currentProject.project_dir.toUpperCase();
-  div.appendChild(h1_project_name);
+  modal_id.appendChild(h1_project_name);
 
   /* MODAL YEAR */
   li_year = document.createElement("li");
   li_year.innerHTML = currentProject.year;
-  div.appendChild(li_year);
+  modal_id.appendChild(li_year);
 
   /* MODAL TEXT */
   const textbox = document.createElement("div");
   textbox.innerHTML = currentProject.text;
   textbox.setAttribute("class", "textbox");
-  div.appendChild(textbox);
+  modal_id.appendChild(textbox);
 
-  modal.style.visibility = "visible";
+  modal_wrapper.style.display = "inherit";
 
   const imageSet = currentProject.images.length;
 
@@ -195,7 +218,7 @@ function openModal(data) {
       "/" +
       data.project[getIdFromHash(data)].images[i];
 
-    div.appendChild(img);
+    modal_id.appendChild(img);
   }
   saveViewedProjects(currentProject.project_dir);
 }
@@ -210,7 +233,11 @@ function updateProjectCount(count) {
 }
 
 function closeModal() {
-  modal.style.visibility = "hidden";
+  window.scrollTo(null, galleryLastScrollPositionY);
+
+  modal_wrapper.style.display = "none";
+  app_wrapper.classList.remove("app__wrapper__fixed");
+
   window.history.pushState(null, null, homeUrl);
 }
 
@@ -224,20 +251,6 @@ function getIdFromHash(data) {
     }
   }
 }
-
-function init() {
-  fetch("json/showcase.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      mountGallery(data);
-      initModal(data);
-      updateProjectCount(Object.keys(data.project).length);
-    });
-}
-
-init();
 
 const search = document.getElementById("search");
 if (search) {

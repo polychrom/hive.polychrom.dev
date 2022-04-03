@@ -3,6 +3,8 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   color: #000;
   margin: 12px 6px;
+  height: 100%;
+  
 }
 
 .nav-icon {
@@ -115,8 +117,14 @@ li {
   padding: 4px 0;
 }
 
-#modal_id img {
-  width: 700px;
+#app__wrapper {
+ 
+}
+
+.app__wrapper__fixed {
+  position: fixed;
+  left:0;
+  right:0;
 }
 
 #gallery {
@@ -181,27 +189,34 @@ li {
   padding-bottom: 70%;
 }
 
-.modal__wrapper {
-  background-color: #fff;
-  margin: 0 100px;
-  padding: 50px;
+#modal__wrapper {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #ccc;
+  width: 100vw;
+  min-height: 100%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  display: none;
+  z-index: 999;
 }
 
 #modal {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  padding: 60px;
+  margin: 100px;
+  pointer-events: none;
   background-color: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  visibility: hidden;
+  overflow-y: auto;
 }
 
 .modal_project_name {
 font-weight: 700;
+}
+
+#modal_id img {
+  width: 100%;
 }
 
 
@@ -216,10 +231,12 @@ font-weight: 700;
   background-image: url(../icons/xmark-solid.svg);
   background-position: center center;
   background-repeat: no-repeat;
+  z-index: 9999;
 }
 
 .textbox {
   width: 600px;
+  margin: 10px 0;
 }
 
 
