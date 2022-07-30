@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class ApiService {
   private endpointUrl: string = '';
-  private serverHost: string = 'https://play.polychrom.dev';
+  private serverHost: string = 'https://hive.polychrom.dev';
   private localHost: string = 'http://localhost:4200';
   private endpoint: string = '/assets/json/showcase.json';
 
