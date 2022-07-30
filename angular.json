@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "play.polychrom.dev": {
+    "hive.polychrom.dev": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/play.polychrom.dev/browser",
+            "outputPath": "dist/hive.polychrom.dev/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "play.polychrom.dev:build:production"
+              "browserTarget": "hive.polychrom.dev:build:production"
             },
             "development": {
-              "browserTarget": "play.polychrom.dev:build:development"
+              "browserTarget": "hive.polychrom.dev:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "play.polychrom.dev:build"
+            "browserTarget": "hive.polychrom.dev:build"
           }
         },
         "test": {
@@ -94,7 +94,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/play.polychrom.dev/server",
+            "outputPath": "dist/hive.polychrom.dev/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -121,12 +121,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "play.polychrom.dev:build:development",
-              "serverTarget": "play.polychrom.dev:server:development"
+              "browserTarget": "hive.polychrom.dev:build:development",
+              "serverTarget": "hive.polychrom.dev:server:development"
             },
             "production": {
-              "browserTarget": "play.polychrom.dev:build:production",
-              "serverTarget": "play.polychrom.dev:server:production"
+              "browserTarget": "hive.polychrom.dev:build:production",
+              "serverTarget": "hive.polychrom.dev:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -138,12 +138,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "play.polychrom.dev:build:production",
-              "serverTarget": "play.polychrom.dev:server:production"
+              "browserTarget": "hive.polychrom.dev:build:production",
+              "serverTarget": "hive.polychrom.dev:server:production"
             },
             "development": {
-              "browserTarget": "play.polychrom.dev:build:development",
-              "serverTarget": "play.polychrom.dev:server:development"
+              "browserTarget": "hive.polychrom.dev:build:development",
+              "serverTarget": "hive.polychrom.dev:server:development"
             }
           },
           "defaultConfiguration": "production"
