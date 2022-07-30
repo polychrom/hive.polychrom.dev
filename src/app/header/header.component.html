@@ -1,7 +1,6 @@
 <div class="header">
-    <div class="header_item_logo"><a role="hoverState" (click)="this.navigate(View.Default)">Play</a></div>
-    <div class="header_item_teaser">Selected Works</div>
-    <div class="header_item_info">Design & Technology</div>
+    <div class="header_item_logo"><a role="hoverState" (click)="this.navigate(View.Default)">Hive</a></div>
+    <div class="header_item_teaser">Gallery</div>
     <div class="header_item_view">
         <span class="navigation">
 
@@ -14,15 +13,9 @@
                     </ng-container>
                 </div>
             </div>
-
-            <a role="hoverState" class="nav_item" [routerLink]="['']" [queryParams]="{view: View.Index }"
-                (click)="this.viewMode(View.Index)">{{ View.Index | titlecase }}</a>
-
-            <a role="hoverState" class="nav_item" [routerLink]="['']" [queryParams]="{view: View.Grid }"
-                (click)="this.viewMode(View.Grid)">{{ View.Grid | titlecase }}</a>
         </span>
 
-        <a class=" icon_github" href="https://github.com/polychrom/play.polychrom.dev" target="_blank">
+        <a class=" icon_github" href="https://github.com/polychrom/hive.polychrom.dev" target="_blank">
             <img role="hoverState" alt="github icon" src="../../assets/icons/github.svg" height="20">
         </a>
     </div>
