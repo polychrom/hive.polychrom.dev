@@ -1,0 +1,120 @@
+.circle {
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  position: absolute;
+  z-index: 5555;
+  border-radius: 30px;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  //border: #ff0000 1px solid;
+  padding-bottom: 20px;
+}
+
+.dropdown-content {
+  padding: 0 10px;
+  display: none;
+  position: absolute;
+  left: -10px;
+  top: 30px;
+  background-color: #fff;
+  min-width: 160px;
+  z-index: 1;
+  // border: 1px solid #ff0000;
+  height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+
+  & a {
+    display: block;
+    padding: 6px 2px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.header {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  z-index: 999;
+  width: 100vw;
+  color: #000;
+}
+
+.header_item_logo {
+  cursor: pointer;
+  padding-left: 20px;
+  position: fixed;
+  grid-column: 1/2;
+
+  & a {
+    border-bottom: 1px solid #000000;
+  }
+  & a:hover {
+    border-bottom: 1px transparent;
+  }
+}
+
+.header_item_view {
+  right: 20px;
+  position: fixed;
+  grid-column: 11 / 13;
+  z-index: 555;
+
+  & span {
+    margin-right: 50px;
+  }
+}
+
+.nav_item {
+  border-bottom: 1px solid #000000;
+  cursor: pointer;
+
+  &:nth-child(-n + 2) {
+    margin-right: 20px;
+  }
+  &:hover {
+    border: none;
+  }
+}
+
+.header_item_teaser {
+  position: relative;
+  grid-column: 3 / 5;
+}
+
+.header_item_info {
+  grid-column: 6 / 10;
+}
+
+.spacer {
+  height: 70px;
+  display: block;
+}
+
+.icon_github {
+  right: 0px;
+  position: absolute;
+  display: inline-block;
+}

@@ -1,9 +1,15 @@
-FROM alpine:latest
+FROM node:16.3.0-alpine
 
+# install nodemon to auto restart node server 
+RUN npm install -g nodemon@2.0.7
 
-# create destination directory
+ENV NODE_OPTIONS=--max-old-space-size=4096
+# Create app directory
+WORKDIR /
 
-# copy the app, note .dockerignore
-#COPY . /usr/src/
+# Bundle app source
+COPY . .
 
-EXPOSE 3000
+EXPOSE 4000
+# only watch /browser folder for changes to avoid memory leak 
+CMD [ "nodemon", "-L", "--delay", "15", "/dist/play.polychrom.dev/server/main.js", "--watch", "/dist/play.polychrom.dev/browser/"]

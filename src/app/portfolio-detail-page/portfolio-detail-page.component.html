@@ -1,0 +1,37 @@
+<div>
+    <div *ngIf="project" class="intro">
+        <div class="title">{{ project.title | titlecase }}</div>
+        <div class="year">{{ project.year }}</div>
+        <div class="text">{{ project.text }}</div>
+    </div>
+
+    <ng-container *ngIf="project">
+        <div *ngFor="let image of project.images; let i = index">
+            <div class="image_wrapper">
+                <img class="image" [src]="'assets/projects/' + project.project_dir +'/' + project.images[i]"
+                    width="100%">
+                <div *ngIf="this.prevProject" role="prev_project" class="zone zone_prev"
+                    (click)="navigateProjects(this.prevProject)">
+                </div>
+
+                <div *ngIf="this.nextProject" role="next_project" class="zone zone_next"
+                    (click)="navigateProjects(this.nextProject)">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<span *ngIf="this.prev && this.prevProject" class="prev_project_overlay"
+    [ngStyle]="{'left': this.posX, 'top': this.posY }">
+    <span class="arrow arrow_left"></span>
+    {{ this.prevProject | titlecase }}
+
+</span>
+
+<span *ngIf="this.next && this.nextProject" class="next_project_overlay"
+    [ngStyle]="{'left': this.posX, 'top': this.posY }">
+    {{ this.nextProject | titlecase }}
+    <span class="arrow arrow_right"></span>
+
+</span>

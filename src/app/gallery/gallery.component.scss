@@ -1,0 +1,164 @@
+$small: 600px;
+$medium: 900px;
+
+.container {
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  transition: 0.3s ease;
+}
+
+.container:hover .overlay {
+  width: 100%;
+}
+
+.project_format {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.icon_video {
+  background-image: url(../../assets/icons/video-solid.svg);
+}
+
+.icon_eye {
+  background-image: url(../../assets/icons/eye-solid.svg);
+}
+
+.project_text_overlay {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 10px 20px;
+  z-index: 9999;
+  font-size: 30px;
+  pointer-events: none;
+}
+
+.view_grid_title {
+  display: none;
+}
+
+.view_grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.view_grid_item {
+  margin-top: 50px;
+  padding: 20px;
+  grid-column: span 3;
+  cursor: pointer;
+}
+
+.view_index {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-bottom: 1px solid #000000;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.view_index:hover {
+  background-color: #000000;
+  background-color: #fff;
+
+  //color: #ffffff;
+}
+
+.view_index_number {
+  grid-column: 2 / 3;
+}
+
+.view_index_title {
+  grid-column: 3 / 5;
+}
+
+.view_index_image {
+  grid-column: 5 / 6;
+}
+
+.view_index_image_circle {
+  border-radius: 18px;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}
+
+.view_index_format {
+  grid-column: 6 / 7;
+}
+
+.view_index_year {
+  grid-column: 9 / 10;
+}
+
+.view_index_seen {
+  grid-column: 11 / 12;
+}
+
+.icon_eye_index {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #ffffff;
+  background-image: url(../../assets/icons/eye-solid.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+#view_linear {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.item_title {
+  grid-column: 3 / 5;
+  margin: 100px 0 40px 0;
+  text-transform: capitalize;
+}
+
+.item_text {
+  grid-column: 6 / 10;
+  margin: 100px 0 40px 0;
+  line-height: 120%;
+}
+
+.active_project {
+  outline: 1px solid #ff0000;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+}

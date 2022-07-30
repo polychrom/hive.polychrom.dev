@@ -1,0 +1,79 @@
+<span *ngIf="this.textOverlay" class="project_text_overlay" [ngStyle]="{'left': this.posX, 'top': this.posY }">
+    {{ this.textOverlay | titlecase }}
+</span>
+
+<!-- Default VIEW -->
+<ng-container *ngIf="this.galleryMode === View.Default && projects">
+    <div *ngFor="let project of projects; let i = index">
+        <div id="view_linear">
+            <div class="item_title">{{ project.title }}</div>
+            <div class="item_text">{{ project.text }}</div>
+            <div class="item_image" [ngStyle]="{'grid-column': this.getSpan(project.width) }">
+                <a [routerLink]="[project.project_dir]">
+                    <div class="container">
+                        <img class="image" id="{{ project.title }}"
+                            [src]="'assets/projects/' + project.project_dir + '/' + project.images[0]"
+                            [alt]="project.project_dir">
+                        <div class="overlay"
+                            [ngStyle]="{'background-color': project.background ? project.background : '#ff0000' }">
+
+                            <span *ngIf="project.video" class="project_format icon icon_video"></span>
+                            <ng-container *ngFor="let see of seen">
+                                <span *ngIf="see === project.title" class="project_format icon icon_eye"></span>
+                            </ng-container>
+
+                        </div>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<!-- Index VIEW -->
+<ng-container *ngIf="galleryMode === View.Index && projects">
+    <div (mouseover)="setAppBackground(project.background)" (mouseout)="setAppBackground(this.defaultBackgroundColor)"
+        class=" view_index" [routerLink]="[project.project_dir]" *ngFor="let project of projects; let i = index"
+        [ngStyle]="{'outline': (this.activeProject === i) ? '3px solid #ff0000' : 'none' }"
+        [ngClass]="{'active_project': this.activeProject === i}">
+        <div class="view_index_number">{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</div>
+                <div class="view_index_title">{{ project.title | titlecase }}</div>
+                <div class="view_index_image">
+                    <img class="view_index_image_circle"
+                        [src]="'assets/projects/' + project.project_dir + '/' + project.images[0]"
+                        [alt]="project.project_dir">
+                </div>
+                <div class="view_index_format">{{ (project.video ? 'video' : 'image') | titlecase }}</div>
+                <div class="view_index_year">{{ project.year }}
+                </div>
+                <ng-container *ngFor="let see of seen">
+                    <div *ngIf="see === project.title" class="view_index_seen">
+                        <span class="icon_eye_index"></span>
+                    </div>
+                </ng-container>
+        </div>
+</ng-container>
+
+
+<!-- Grid VIEW -->
+<ng-container *ngIf="galleryMode === View.Grid && projects">
+    <div class="view_grid">
+        <div class="view_grid_item" [routerLink]="[project.project_dir]"
+            *ngFor="let project of projects; let i = index">
+            <div class="container">
+                <img class="image" id="{{ project.title }}"
+                    [src]="'assets/projects/' + project.project_dir + '/' + project.images[0]"
+                    [alt]="project.project_dir">
+                <div class="overlay"
+                    [ngStyle]="{'background-color': project.background ? project.background : '#ff0000' }">
+                    <span *ngIf="project.video" class="project_format icon icon_video"></span>
+                    <ng-container *ngFor="let see of seen">
+                        <span *ngIf="see === project.title" class="project_format icon icon_eye"></span>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

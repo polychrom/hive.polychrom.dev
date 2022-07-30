@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div *ngIf="!this.is404" class="grid-12">
+    <div id="intro">
+        Visual logbook and digital playground, showing latest explorations in 3D.
+    </div>
+</div>
+<!-- use components -->
+<router-outlet></router-outlet>
+
+
+<div class="scrolltop" *ngIf="this.isScrollTopActive" (click)="scrollToTop()">
+    <img src="assets/icons/up-long-solid.svg" height="20">
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,8 @@
+<div class="notfound">hey it looks like the requested page is not available, how about this:</div>
+
+
+<span *ngFor="let project of projects; let i = index;" class="project_item">
+    <a [routerLink]="'/' + project.project_dir">{{ project.title }}</a>
+    <span [ngStyle]="{ 'background-color' : project.background }" class="project_number">
+        {{ i < 10 ? '0' + i : i }} </span>
+    </span>

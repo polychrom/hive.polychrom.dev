@@ -1,107 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>H I V E</title>
 
-    <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="assets/favicon/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Visual logbook and digital playground, showing latest explorations in 3D.">
+  <meta name="theme-color" content="#FFFFFF" />
 
-    <link rel="stylesheet" href="css/styles.css" />
+  <title>Frontend Engineer × Creative Technologist</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/16f6774484.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div id="app__wrapper">
-      <div id="cockpit">
-        <div>
-          <div id="logo">hive</div>
-          <div id="logo-sub">output × process</div>
-        </div>
-        <!--
-      <div id="viewed">view</div>
-      -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
 
-        <div class="flex">
-          <!--
-        <input id="search" type="search" />
-        -->
-          <!--
-          <div class="btn dropdown">
-            <span id="timeline">Timeline</span>
-            <div class="dropdown-content">
-              <li onclick="filter(0, this)">All</li>
-              <li onclick="filter(2005, this)">2005</li>
-              <li onclick="filter(2021, this)">2021</li>
-            </div>
-          </div>
-        -->
+<body>
+  <app-root></app-root>
+</body>
 
-          <button
-            class="btn icon-grid icon-grid-2"
-            onclick="setGridItems(2, this)"
-          ></button>
-          <button
-            class="btn icon-grid icon-grid-3"
-            onclick="setGridItems(3, this)"
-          ></button>
-          <button
-            class="btn icon-grid icon-grid-4"
-            onclick="setGridItems(4, this)"
-          ></button>
-          <button
-            class="btn icon-grid icon-grid-5"
-            onclick="setGridItems(5, this)"
-          ></button>
-        </div>
-      </div>
-      <div id="gallery"></div>
-    </div>
-
-    <div id="modal__wrapper" onclick="closeModal()">
-      <div id="modal">
-        <div id="modal_close" onclick="closeModal()"></div>
-      </div>
-    </div>
-    <script src="app.js"></script>
-  </body>
 </html>

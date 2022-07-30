@@ -1,19 +1,25 @@
 version: "3"
 
 services:
-  projectx:
-    image: nginx:latest
-    container_name: hive_polychrom_dev
+  hive_polychrom_dev_ssr:
+    build: .
+    container_name: hive_polychrom_dev_ssr
     ports:
-      - 8005
+      - 4000:4000
     volumes:
-      - ./src:/usr/share/nginx/html
+      # /dist/server/
+      # /dist/browser/
+      - ./dist/hive.polychrom.dev:/dist/hive.polychrom.dev
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.hive_polychrom_dev.entrypoints=websecure"
       - "traefik.http.routers.hive_polychrom_dev.rule=Host(`hive.polychrom.dev`)"
       - "traefik.http.routers.hive_polychrom_dev.tls.certresolver=myresolver"
       - "traefik.port=8005"
+
+      # Enable gzip compression
+      - "traefik.http.routers.hive_polychrom_dev.middlewares=test-compress"
+      - "traefik.http.middlewares.test-compress.compress=true"
 
     networks:
       - traefik_network
