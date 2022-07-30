@@ -1,5 +1,5 @@
 {
-  "name": "play.polychrom.dev",
+  "name": "hive.polychrom.dev",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,10 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev:ssr": "ng run play.polychrom.dev:serve-ssr",
-    "serve:ssr": "node dist/play.polychrom.dev/server/main.js",
-    "build:ssr": "ng build && ng run play.polychrom.dev:server",
-    "prerender": "ng run play.polychrom.dev:prerender"
+    "dev:ssr": "ng run hive.polychrom.dev:serve-ssr",
+    "serve:ssr": "node dist/hive.polychrom.dev/server/main.js",
+    "build:ssr": "ng build && ng run hive.polychrom.dev:server",
+    "prerender": "ng run hive.polychrom.dev:prerender"
   },
   "private": true,
   "dependencies": {
